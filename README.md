@@ -45,8 +45,8 @@ Prefer Flask? Checkout my [gtalarico/flask-vuejs-template](https://github.com/gt
 
 | Location             |  Content                                   |
 |----------------------|--------------------------------------------|
-| `/backend`           | Django Project & Backend Config            |
-| `/backend/api`       | Django App (`/api`)                        |
+| `/api`           | Django Project & Backend Config            |
+| `/api/api`       | Django App (`/api`)                        |
 | `/src`               | Vue App .                                  |
 | `/src/main.js`       | JS Application Entry Point                 |
 | `/public/index.html` | Html Application Entry Point (`/`)         |
@@ -108,7 +108,7 @@ $ python manage.py runserver
 
 ## Deploy
 
-* Set `ALLOWED_HOSTS` on `backend.settings.prod.py`
+* Set `ALLOWED_HOSTS` on `api.settings.prod.py`
 
 ### Heroku Server
 
@@ -118,7 +118,7 @@ $ heroku git:remote --app django-vue-template-demo
 $ heroku buildpacks:add --index 1 heroku/nodejs
 $ heroku buildpacks:add --index 2 heroku/python
 $ heroku addons:create heroku-postgresql:hobby-dev
-$ heroku config:set DJANGO_SETTINGS_MODULE=backend.settings.prod
+$ heroku config:set DJANGO_SETTINGS_MODULE=api.settings.prod
 
 $ git push heroku
 ```

@@ -1,3 +1,9 @@
+# What's different from the original repo?
+
+1. Changed `backend` folder into `api`.
+2. Added Vuetify.
+
+
 # Django Vue Template ✌️ 🐍
 
 ![Vue Logo](/src/assets/logo-vue.png "Vue Logo")
@@ -117,8 +123,11 @@ $ heroku apps:create django-vue-template-demo
 $ heroku git:remote --app django-vue-template-demo
 $ heroku buildpacks:add --index 1 heroku/nodejs
 $ heroku buildpacks:add --index 2 heroku/python
+$ heroku config:set HOST_ENV=production
 $ heroku addons:create heroku-postgresql:hobby-dev
-$ heroku config:set DJANGO_SETTINGS_MODULE=api.settings.prod
+$ heroku config:set SECRET_KEY=123456
+$ heroku config:set ALLOWED_HOSTS=https://YOUR_APP_NAME.herokuapp.com
+$ heroku config:set DATABASE_URL=postgres://YOUR_DB_URL
 
 $ git push heroku
 ```

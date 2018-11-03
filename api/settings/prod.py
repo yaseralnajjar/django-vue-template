@@ -1,23 +1,19 @@
-""" Production Settings """
-
-import os
 import dj_database_url
-from .dev import *
+from urllib.parse import quote_plus
 
-############
-# DATABASE #
-############
+from .base import *
+
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = False
+
+# Database
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')
+        default=os.environ.get('DATABASE_URL')
     )
 }
 
 
-############
-# SECURITY #
-############
-
-DEBUG = False
-# Set to your Domain here (eg. 'django-vue-template-demo.herokuapp.com')
-ALLOWED_HOSTS = ['*']
+# Hosts
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(';')

@@ -1,7 +1,7 @@
 # What's different from the original repo?
 
 1. Changed `backend` folder into `api`.
-2. Added Vuetify.
+2. Added Vuetify Vuex PWA SASS stylus.
 
 
 # Django Vue Template ✌️ 🐍
@@ -51,8 +51,8 @@ Prefer Flask? Checkout my [gtalarico/flask-vuejs-template](https://github.com/gt
 
 | Location             |  Content                                   |
 |----------------------|--------------------------------------------|
-| `/api`           | Django Project & Backend Config            |
-| `/api/api`       | Django App (`/api`)                        |
+| `/api`               | Django Project & Backend Config            |
+| `/api/api`           | Django App (`/api`)                        |
 | `/src`               | Vue App .                                  |
 | `/src/main.js`       | JS Application Entry Point                 |
 | `/public/index.html` | Html Application Entry Point (`/`)         |
@@ -121,12 +121,14 @@ $ python manage.py runserver
 ```
 $ heroku apps:create django-vue-template-demo
 $ heroku git:remote --app django-vue-template-demo
+
 $ heroku buildpacks:add --index 1 heroku/nodejs
 $ heroku buildpacks:add --index 2 heroku/python
-$ heroku config:set HOST_ENV=production
 $ heroku addons:create heroku-postgresql:hobby-dev
+
+$ heroku config:set HOST_ENV=production
 $ heroku config:set SECRET_KEY=123456
-$ heroku config:set ALLOWED_HOSTS=https://YOUR_APP_NAME.herokuapp.com
+$ heroku config:set ALLOWED_HOSTS=YOUR_APP_NAME.herokuapp.com
 $ heroku config:set DATABASE_URL=postgres://YOUR_DB_URL
 
 $ git push heroku
@@ -142,7 +144,7 @@ The `Procfile` will run Django migrations and then launch Django'S app using gun
 
 ##### Heroku One Click Deploy
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/gtalarico/django-vue-template)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/yaseralnajjar/django-vue-template)
 
 ## Static Assets
 
